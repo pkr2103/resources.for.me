@@ -8,5 +8,5 @@ list files on ftp server : curl -l ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-inst
 
 derr... cant download on compute node. So for downloading lots of sras just do this:
 
-while read i; do fastq-dump $i; done < list.of.sras.
+while read i; do fastq-dump --split-files -I --skip-technical --gzip $i; done < list.of.sras.
 
